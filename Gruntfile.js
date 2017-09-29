@@ -210,7 +210,22 @@ module.exports = function(grunt)
         
         log("Step 1: Empty dist folder");
         
-        fsExtra.emptyDirSync("dist"); // Ensure dist is empty
+        // fsExtra.emptyDirSync("dist"); // Ensure dist is empty
+        fileSystem.recurseSync("dist", function(filepath, relative, filename) 
+        {
+            if (relative.indexOf("css") != 0 && relative.indexOf("js") != 0)
+            {
+                if (!filename)
+                {
+                    fsExtra.rmdirSync(filepath);
+                }
+                else if ("dist/" + relative == filepath)
+                {
+                    fileSystem.unlinkSync(filepath);
+                    grunt.log.writeln("deleted file " + filepath);
+                }
+            }
+        });
         
         log("Step 2: Get list of files");
         
@@ -228,7 +243,7 @@ module.exports = function(grunt)
         
         fileSystem.recurseSync("source", function(filepath, relative, filename) 
         {
-            if (filename != null && filter(filepath))
+            if (filename && filter(filepath))
                 files.push(relative);
         });
         
