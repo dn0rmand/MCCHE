@@ -12,9 +12,9 @@ curl --verbose --ftp-create-dirs --upload-file uploadfilename --user sons_user:$
 
 # Getting Started
 
-First install `nodejs` ( http://nodejs.org )
+First install `nodejs` ![]( http://nodejs.org)
 
-Then, from the MCCHE folder, run the following command
+Then, from the MCCHE folder, run the following command:
     npm install
 this will download and install all the required packages.
 
