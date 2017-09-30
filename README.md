@@ -22,28 +22,42 @@ For convenience, also install `grunt-cli` and `http-server` with the following c
 
 # Setup local Website
 
-1.	Build with the command:
+Build or update the `dist` folder with the command:
 
     grunt
 
-This will generate the `dist` folder with the pre-processed files.
+`dist` is a pre-processed version of `source`
 
-2.	Run the local web server by running the following commands in a separate terminal:
+Run the local web server by running the following commands in a separate terminal:
 
     cd <path to dist folder>
     http-server 
 
-3.	Software dependencies
-3.	Latest releases
-4.	API references
-
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+
+Each time you modify a file ( html, js, css ... ), you need to re-run the command:
+
+    grunt
+
+If you modified/added an html file, an image ... ( anything but css and js ),  you can also 
+just run:
+
+    grunt build
+
+If you modified an existing js file, run the command:
+
+    grunt uglify
+
+For css modification, use this command:
+
+    grunt cssmin
+
+You can also run the following command to listen to files changes and automatically update `dist` 
+
+    grunt watch
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Clone this repository with the command:
+
+    git clone https://mcche.visualstudio.com/_git/MCCHE
