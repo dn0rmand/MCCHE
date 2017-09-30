@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                 authKey: 'mcche'
               },
               src: 'dist',
-              dest: 'beta',
+              dest: '.',
               forceVerbose:true,
               exclusions: [
                 // Fonts extensions
@@ -102,7 +102,7 @@ module.exports = function (grunt) {
                 authKey: 'mcche'
               },
               src: 'dist',
-              dest: 'beta'
+              dest: '.'
             }
         }
     });
