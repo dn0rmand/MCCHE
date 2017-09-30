@@ -78,8 +78,6 @@ Since we can't have the user/password in the git repository, you need to create 
 }
 ```
 
-**NOTE**: for now it uploads to [ftp://MCCHEBasketball.com/beta/](ftp://MCCHEBasketball.com/beta/)
-
 # Contribute
 
 Clone this repository with the command:
