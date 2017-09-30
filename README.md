@@ -1,13 +1,13 @@
 # Introduction
 MCCHE Basketball website GIT repository. 
 
-The MCCHE Basketball website is located at http://MCCHEBasketball.com
+The MCCHE Basketball website is located at [http://MCCHEBasketball.com/](http://MCCHEBasketball.com/)
 
 Let this section explain the objectives or the motivation behind this project. 
 
 # Getting Started
 
-First install `nodejs` ![]( http://nodejs.org)
+First install `nodejs`. Download it from [http://nodejs.org](http://nodejs.org)
 
 Then, from the MCCHE folder, run the following command:
 
@@ -58,7 +58,7 @@ You can also run the following command to listen to files changes and automatica
 
 # Deploy to MCCHE 
 
-To upload the changes to ftp://MCCHEBasketball.com use one of the following command:
+To upload the changes to [ftp://MCCHEBasketball.com/](ftp://MCCHEBasketball.com/) use one of the following command:
 
     grunt update
 
@@ -68,7 +68,7 @@ or
 
 deploy will upload the whole `dist` folder, while update will only upload the html, js and css files
 
-PS: for now it uploads to ftp://MCCHEBasketball.com/beta
+**NOTE**: for now it uploads to [ftp://MCCHEBasketball.com/beta/](ftp://MCCHEBasketball.com/beta/)
 
 # Contribute
 
