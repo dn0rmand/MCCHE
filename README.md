@@ -33,7 +33,7 @@ Run the local web server by running the following commands in a separate termina
     cd <path to dist folder>
     http-server 
 
-# Build and Test
+# Build
 
 Each time you modify a file ( html, js, css ... ), you need to re-run the command:
 
@@ -55,6 +55,20 @@ For css modification, use this command:
 You can also run the following command to listen to files changes and automatically update `dist` 
 
     grunt watch
+
+# Deploy to MCCHE 
+
+To upload the changes to ftp://MCCHEBasketball.com use one of the following command:
+
+    grunt update
+
+or
+
+    grunt deploy
+
+deploy will upload the whole `dist` folder, while update will only upload the html, js and css files
+
+PS: for now it uploads to ftp://MCCHEBasketball.com/beta
 
 # Contribute
 
