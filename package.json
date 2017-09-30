@@ -7,10 +7,10 @@
     "file-system": "^2.2.2",
     "fs-extra": "^1.0.0",
     "grunt": "^1.0.1",
-    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-uglify": "^3.1.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ftp-deploy": "^0.1.10"
   },
   "devDependencies": {}
 }
