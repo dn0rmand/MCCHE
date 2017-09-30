@@ -5,30 +5,31 @@ The MCCHE Basketball website is located at http://MCCHEBasketball.com
 
 Let this section explain the objectives or the motivation behind this project. 
 
-Command to deploy:
-
-FTP_PASSWORD=[ze secret password]
-curl --verbose --ftp-create-dirs --upload-file uploadfilename --user sons_user:$FTP_PASSWORD ftp://MCCHEBasketball.com/NewVersion/web/
-
 # Getting Started
 
 First install `nodejs` ![]( http://nodejs.org)
 
 Then, from the MCCHE folder, run the following command:
+
     npm install
+
 this will download and install all the required packages.
 
-For convenience, also install `grunt-cli` and `http-server` with the following commands
+For convenience, also install `grunt-cli` and `http-server` with the following commands:
+
     npm install grunt-cli -g
     npm install http-server -g
 
 # Setup local Website
 
-1.	Build with the command
+1.	Build with the command:
+
     grunt
+
 This will generate the `dist` folder with the pre-processed files.
 
-2.	Run the local web server by running the following commands in a separate terminal
+2.	Run the local web server by running the following commands in a separate terminal:
+
     cd <path to dist folder>
     http-server 
 
