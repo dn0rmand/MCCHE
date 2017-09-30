@@ -68,6 +68,16 @@ or
 
 deploy will upload the whole `dist` folder, while update will only upload the html, js and css files
 
+Since we can't have the user/password in the git repository, you need to create a .ftppass like this
+```
+{
+  "mcche": {
+    "username": "<username>",
+    "password": "<password>"
+  }
+}
+```
+
 **NOTE**: for now it uploads to [ftp://MCCHEBasketball.com/beta/](ftp://MCCHEBasketball.com/beta/)
 
 # Contribute
