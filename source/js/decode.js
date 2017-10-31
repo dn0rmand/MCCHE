@@ -2,7 +2,7 @@ function getPassword() {
   var orig_pass = prompt("Please enter password", "");
   if (orig_pass != null && orig_pass != "")
       var password = new Array(orig_pass.length);
-  for (i = 0; i < orig_pass.length; i++) {
+  for (var i = 0; i < orig_pass.length; i++) {
       password[i] = orig_pass.charCodeAt(i);
   }
   return password;
@@ -14,7 +14,7 @@ function zubragDecode(encodedHTML, expected, correctBlock, errorBlock) {
   orig = orig.split("");
 
   var passnum = orig.length % password.length;
-  for (i = orig.length - 1; i >= 0; i--) {
+  for (var i = orig.length - 1; i >= 0; i--) {
 
       passnum--;
       if (passnum == -1) passnum = password.length - 1;
@@ -24,8 +24,8 @@ function zubragDecode(encodedHTML, expected, correctBlock, errorBlock) {
 
       if (pos2 >= orig.length) continue;
 
-      char1 = orig[pos1];
-      char2 = orig[pos2];
+      var char1 = orig[pos1];
+      var char2 = orig[pos2];
 
       orig[pos2] = char1;
       orig[pos1] = char2;
@@ -33,7 +33,7 @@ function zubragDecode(encodedHTML, expected, correctBlock, errorBlock) {
   }
 
   var orig1 = "";
-  for (i = 0; i < orig.length; i++) {
+  for (var i = 0; i < orig.length; i++) {
       orig1 = orig1 + orig[i];
   }
   orig1 = orig1.replace(/mmm/g, "\r\n").trim();
