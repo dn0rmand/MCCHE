@@ -6,7 +6,7 @@ module.exports = function (grunt) {
             options: {
                 sourceMap: false,
             },
-            "dist/css/mcche.css": 
+            "docs/css/mcche.css":
             [
                 "source/css/bootstrap.css",
                 "source/css/style.css",
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
                 mangle: true,
                 sourceMap: false
             },
-            'dist/js/mcche.js': 
+            'docs/js/mcche.js':
             [
                 'source/js/jquery-1.11.1.min.js',
                 'source/js/bootstrap.js',
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
             }
         },
 
-        "ftp-deploy": 
+        "ftp-deploy":
         {
             build: 
             {
@@ -72,25 +72,25 @@ module.exports = function (grunt) {
                 port: 21,
                 authKey: 'mcche'
               },
-              src: 'dist',
+              src: 'docs',
               dest: '.',
               forceVerbose:true,
               exclusions: [
                 // Fonts extensions
-                'dist/**/*.eot', 
-                'dist/**/*.svg', 
-                'dist/**/*.ttf', 
-                'dist/**/*.woff', 
-                'dist/**/*.woff2', 
-                'dist/**/*.otf', 
+                'docs/**/*.eot',
+                'docs/**/*.svg',
+                'docs/**/*.ttf',
+                'docs/**/*.woff',
+                'docs/**/*.woff2',
+                'docs/**/*.otf',
                 // Members Only files
-                'dist/members_only/**/*.pdf', 
-                'dist/members_only/**/*.xlsx', 
+                'docs/members_only/**/*.pdf',
+                'docs/members_only/**/*.xlsx',
                 // Images
-                'dist/**/*.gif', 
-                'dist/**/*.jpg', 
-                'dist/**/*.JPG', 
-                'dist/**/*.png'
+                'docs/**/*.gif',
+                'docs/**/*.jpg',
+                'docs/**/*.JPG',
+                'docs/**/*.png'
                 ]
             },
             all: 
@@ -101,13 +101,13 @@ module.exports = function (grunt) {
                 port: 21,
                 authKey: 'mcche'
               },
-              src: 'dist',
+              src: 'docs',
               dest: '.'
             }
         }
     });
 
-    grunt.task.registerTask('build', 'Copy files to dist an pre-process them', function (arg1, arg2) {
+    grunt.task.registerTask('build', 'Copy files to docs an pre-process them', function (arg1, arg2) {
         const fsExtra = require("fs-extra");
         const fileSystem = require("file-system");
         const Path = require("path");
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
 
         function copyFile(filename) {
             var deep = filename.split(Path.sep).length - 1;
-            var destin = Path.join("dist", filename);
+            var destin = Path.join("docs", filename);
             var source = Path.join("source", filename);
             var options = undefined;
             var stats = fsExtra.statSync(source);
@@ -223,14 +223,14 @@ module.exports = function (grunt) {
             return content;
         }
 
-        log("Step 1: Empty dist folder");
+        log("Step 1: Empty docs folder");
 
-        // Ensure dist is empty but keeps css and js folders
-        fileSystem.recurseSync("dist", function (filepath, relative, filename) {
+        // Ensure docs is empty but keeps css and js folders
+        fileSystem.recurseSync("docs", function (filepath, relative, filename) {
             if (relative.indexOf("css") != 0 && relative.indexOf("js") != 0) {
                 if (!filename) {
                     fsExtra.rmdirSync(filepath);
-                } else if ("dist/" + relative == filepath) {
+                } else if ("docs/" + relative == filepath) {
                     fileSystem.unlinkSync(filepath);
                 }
             }
